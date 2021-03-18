@@ -1,0 +1,60 @@
+.App {
+  text-align: center;
+  
+}
+
+h1 {
+  background: rgb(227,179,133);
+  background: linear-gradient(90deg, rgba(227,179,133,1) 0%, rgba(128,23,23,0.11808473389355745) 50%, rgba(227,179,133,1) 100%);
+  padding: 2%;
+  margin: 0;
+}
+
+h2 {
+  font-size: 90%;
+}
+
+.Search {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  background-color: rgb(204, 196, 185);
+  padding: 1%;
+  margin: 0;
+  opacity: 0.75;
+  background-image: url(./images/workers.jpg);
+  background-size: cover;
+}
+
+.form {
+  width: 50%;
+}
+
+.salaryRange {
+  color: antiquewhite;
+  background-color: black;
+  padding: 0;
+  width:30%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+}
+
+.input {
+  margin:5%;
+  padding: 1%;
+}
+
+
+.Jobs {
+  display: inline-block;
+  margin: 6% 6% 2% 6%;
+  background-color: rgb(210, 221, 205);
+  box-shadow: 2px 4px black;
+  padding: 1%;
+  border-radius: 20px;
+  opacity: 0.9;
+  width:8%;
+}
