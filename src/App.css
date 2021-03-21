@@ -6,7 +6,7 @@
 h1 {
   background: rgb(227,179,133);
   background: linear-gradient(90deg, rgba(227,179,133,1) 0%, rgba(128,23,23,0.11808473389355745) 50%, rgba(227,179,133,1) 100%);
-  padding: 2%;
+  padding: 0.5%;
   margin: 0;
 }
 
@@ -25,11 +25,13 @@ h2 {
   opacity: 0.75;
   background-image: url(./images/workers.jpg);
   background-size: cover;
+  
 }
 
-.form {
-  width: 50%;
+.containerSearch {
+  width:50%;
 }
+
 
 .salaryRange {
   color: antiquewhite;

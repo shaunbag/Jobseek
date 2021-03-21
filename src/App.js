@@ -1,52 +1,37 @@
-import {useState} from 'react';
+import React from 'react';
 import './App.css';
 import Jobs from './Components/Jobs';
-import JobSearch from './Components/SearchBar';
+import JobSearch from './Components/JobsSearch';
+import JobApi from './Util/jobApi';
 
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-  const [jobState, setJobState] = useState({
-    keyword: '',
-    salary:  0 ,
-    location: '',
-    description: ''
-  });
+    this.state = {
+      jobs: []
+    };
+    this.searchJobs = this.searchJobs.bind(this);
+  }
 
-  const handleKeyword = (e) => {    
-    setJobState({
-      keyword: e.target.value
-      
-    })
-  };
-  
-  const handleSalary = (e) => {    
-    setJobState({
-      salary: e.target.value      
-    })
-  }; 
+  searchJobs(keyword, location, salary) {
+    JobApi.search(keyword, location, salary).then(jobs => {
+      this.setState({
+        jobs: jobs
+      })
+    });
+  }
 
-  const handleLocation = (e) => {    
-    setJobState({
-      location: e.target.value
-    })
-  }; 
-
-
-  return (
-    <div className="App">
-      <h1>Laser Guided Job Seeker</h1>
-      <JobSearch keyword={handleKeyword} salary={handleSalary} location={handleLocation}/>
-      <Jobs  keyword={jobState.keyword} salary={jobState.salary} location={jobState.location} description={jobState.description}/>
-      <Jobs  keyword={jobState.keyword} salary={jobState.salary} location={jobState.location} description={jobState.description}/>
-      <Jobs  keyword={jobState.keyword} salary={jobState.salary} location={jobState.location} description={jobState.description}/>
-      <Jobs  keyword={jobState.keyword} salary={jobState.salary} location={jobState.location} description={jobState.description}/>
-      <Jobs  keyword={jobState.keyword} salary={jobState.salary} location={jobState.location} description={jobState.description}/>
-      <Jobs  keyword={jobState.keyword} salary={jobState.salary} location={jobState.location} description={jobState.description}/>
-      <Jobs  keyword={jobState.keyword} salary={jobState.salary} location={jobState.location} description={jobState.description}/>
-      
-           
-    </div>
+  render() { 
+    return (
+        <div className="App">
+          <h1>Laser Guided Job Seeker</h1>
+          <JobSearch searchJobs={this.searchJobs}/>
+          <Jobs jobs={this.state.jobs} />         
+              
+        </div>
   );
 }
+};
 
 export default App;

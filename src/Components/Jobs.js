@@ -8,6 +8,7 @@ const Jobs = (props) => {
             <p>Job Description: {props.description}</p>
             <p>£{props.salary} Starting salary</p>
             <p>Job Location: {props.location}</p>
+            <a href={props.url}>See More</a>
         </div>
     )
 }
