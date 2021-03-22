@@ -44,9 +44,10 @@ class JobSearch extends React.Component {
                 <input className="input" onChange={this.handleLocation} placeholder="Enter Job Location here...."></input>
                 <div className="salaryRange">
                     <label  for="salary">Choose a Minimum Salary:</label>
-                    <input className="input" onChange={this.handleSalary} type="range" id="salary" name="salary" min="18,000" max="70000"></input>
+                    <input className="slider" onChange={this.handleSalary} type="range" id="salary" name="salary" min="18,000" max="70000"></input>
+                    <p className="slider">£{this.state.salary}</p>
                 </div>
-                <button onClick={this.handleSearch}>SUBMIT</button>              
+                <button id="btn" onClick={this.handleSearch}>Find Jobs!</button>              
             </div>
         </div>
     )

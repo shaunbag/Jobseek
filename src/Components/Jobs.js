@@ -1,14 +1,19 @@
 import React from 'react';
+import DOMPurify from 'dompurify';
 
 
 const Jobs = (props) => {
+    const htmlPart = props.job.description;
+ 
     return (
+        
         <div className="Jobs">
-            <h2>Job Title: {props.keyword}</h2>
-            <p>Job Description: {props.description}</p>
-            <p>£{props.salary} Starting salary</p>
-            <p>Job Location: {props.location}</p>
-            <a href={props.url}>See More</a>
+            <h2>{props.job.company}</h2>
+            <h3>Job description:</h3>
+            <p dangerouslySetInnerHTML={ {__html: DOMPurify.sanitize(htmlPart)} } ></p>
+            <p>Job Location: {props.job.location.display_name}</p>
+            <p>Min Salary £ {props.job.minSalary}</p>
+            <a href={props.job.url}>See More</a>
         </div>
     )
 }

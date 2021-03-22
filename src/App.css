@@ -11,7 +11,8 @@ h1 {
 }
 
 h2 {
-  font-size: 90%;
+  font-size: 2em;
+  color: black;
 }
 
 .Search {
@@ -27,6 +28,7 @@ h2 {
   background-size: cover;
   
 }
+
 
 .containerSearch {
   width:50%;
@@ -45,18 +47,31 @@ h2 {
 }
 
 .input {
-  margin:5%;
+  margin: 5% 5% 1% 5%;
   padding: 1%;
 }
 
+.slider {
+  margin:5px;
+}
+
+#btn {
+  background-color: rgb(0, 255, 21);
+  color: rgb(0, 0, 0);
+  width: 10%;
+  padding:1%;
+  border-radius: 10px;
+}
 
 .Jobs {
-  display: inline-block;
-  margin: 6% 6% 2% 6%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:2%;
   background-color: rgb(210, 221, 205);
   box-shadow: 2px 4px black;
   padding: 1%;
   border-radius: 20px;
   opacity: 0.9;
-  width:8%;
+  width:60%;
 }

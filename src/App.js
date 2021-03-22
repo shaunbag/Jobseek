@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Jobs from './Components/Jobs';
+import JobsList from './Components/JobsList';
 import JobSearch from './Components/JobsSearch';
 import JobApi from './Util/jobApi';
 
@@ -16,9 +16,11 @@ class App extends React.Component {
 
   searchJobs(keyword, location, salary) {
     JobApi.search(keyword, location, salary).then(jobs => {
+     
       this.setState({
         jobs: jobs
       })
+      
     });
   }
 
@@ -27,7 +29,7 @@ class App extends React.Component {
         <div className="App">
           <h1>Laser Guided Job Seeker</h1>
           <JobSearch searchJobs={this.searchJobs}/>
-          <Jobs jobs={this.state.jobs} />         
+          <JobsList jobs={this.state.jobs} />         
               
         </div>
   );

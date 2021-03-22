@@ -6,17 +6,20 @@ const JobApi = {
         const url = `https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=${api_id}&app_key=${apiKey}`
         const response = await fetch(url + `&results_per_page=20&what=${keyword}&where=${location}&salary_min=${salary}&content-type=application/json`)
             const jsonResponse = await response.json(); 
-            console.log(jsonResponse)
-            if(jsonResponse.jobs){
-                return jsonResponse.jobs.map(jobs => {
+            //console.log(jsonResponse)
+            if(jsonResponse.results){
+                console.log(jsonResponse.results)
+                return jsonResponse.results.map(job => {
                     return {
-                        id: jobs.id,
-                        keyword: jobs.title,
-                        location: jobs.location,
-                        minSalary: jobs.salary_min,
-                        description: jobs.description,
-                        url: jobs.url
+                        id: job.id,
+                        company: job.company.display_name,
+                        keyword: job.title,
+                        location: job.location,
+                        minSalary: job.salary_min,
+                        description: job.description,
+                        url: job.redirect_url
                 };
+                
             });
         }          
     }
