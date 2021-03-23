@@ -1,5 +1,4 @@
-const apiKey = 'c7439ed253913b961024c8be582682f8';
-const api_id = '8d293d1c';
+
 
 const JobApi = {
     async search(keyword, location, salary) {   
