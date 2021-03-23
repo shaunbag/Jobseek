@@ -27,7 +27,7 @@ class App extends React.Component {
   render() { 
     return (
         <div className="App">
-          <h1>Laser Guided Job Seeker</h1>
+          <h1>Laser Guided <span style={{color:'red'}}>Job</span> Seeker</h1>
           <JobSearch searchJobs={this.searchJobs}/>
           <JobsList jobs={this.state.jobs} />         
               
