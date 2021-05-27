@@ -48,8 +48,9 @@ class JobSearch extends React.Component {
                     <input className="slider" onChange={this.handleSalary} type="range" id="salary" name="salary" min="18,000" max="70000"></input>
                     <p className="slider">£{this.state.salary}</p>
                 </div>
-                <button id="btn" onClick={this.handleSearch}>Find Jobs!</button>
-                <p className="adzuna">Job listings Powered By <a href="http://www.adzuna.co.uk"><img src={Logo} alt="img not found" width="100px"></img></a></p>              
+                <button id="btn" onClick={this.handleSearch}>Find Jobs!</button>                
+                <p className="adzuna">Job listings Powered By <a href="http://www.adzuna.co.uk"><img src={Logo} alt="img not found" width="100px"></img></a></p>  
+
             </div>
         </div>
     )
