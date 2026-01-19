@@ -30,11 +30,17 @@ The app starts on `http://localhost:3000`.
 `npm run build`
 
 ## API Configuration
-The Adzuna credentials are referenced in `src/Util/jobApi.js` as `api_id` and `apiKey`. Replace the placeholder values with your own keys before running in production, and avoid committing secrets. Example:
-```js
-const apiKey = '<your-adzuna-api-key>';
-const api_id = '<your-adzuna-app-id>';
+Provide your Adzuna credentials via environment variables (Create React App requires the `REACT_APP_` prefix):
+- `REACT_APP_ADZUNA_APP_ID`
+- `REACT_APP_ADZUNA_API_KEY`
+
+Create a `.env` file in the project root (do not commit it) and add:
 ```
+REACT_APP_ADZUNA_APP_ID=your-adzuna-app-id
+REACT_APP_ADZUNA_API_KEY=your-adzuna-api-key
+```
+
+The app will throw a clear error if these are missing at runtime.
 
 ## Project Structure
 - `src/App.js` — main app shell; wires search input to results list.

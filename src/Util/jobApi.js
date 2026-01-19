@@ -1,9 +1,13 @@
-const apiKey = 'c7439ed253913b961024c8be582682f8';
-const api_id = '8d293d1c';
+const apiKey = process.env.REACT_APP_ADZUNA_API_KEY;
+const apiId = process.env.REACT_APP_ADZUNA_APP_ID;
 
 const JobApi = {
     async search(keyword, location, salary) {   
-        const url = `https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=${api_id}&app_key=${apiKey}`
+        if (!apiKey || !apiId) {
+            throw new Error('Adzuna API credentials are missing. Set REACT_APP_ADZUNA_APP_ID and REACT_APP_ADZUNA_API_KEY in your environment.');
+        }
+
+        const url = `https://api.adzuna.com/v1/api/jobs/gb/search/1?app_id=${apiId}&app_key=${apiKey}`
         const response = await fetch(url + `&results_per_page=20&what=${keyword}&where=${location}&salary_min=${salary}&content-type=application/json`)
             const jsonResponse = await response.json(); 
             //console.log(jsonResponse)
